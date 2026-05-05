@@ -3,6 +3,7 @@
 import os
 import logging
 import sys
+import io
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -25,9 +26,14 @@ def setup_logging():
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         handlers=[
             logging.FileHandler(
-                f"{logs_dir}/dify_generator_{datetime.now().strftime('%Y%m%d')}.log"
+                f"{logs_dir}/dify_generator_{datetime.now().strftime('%Y%m%d')}.log",
+                encoding="utf-8",
             ),
-            logging.StreamHandler(sys.stdout),
+            logging.StreamHandler(
+                io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+                if hasattr(sys.stdout, "buffer")
+                else sys.stdout
+            ),
         ],
     )
 
@@ -49,7 +55,8 @@ def setup_logging():
     for name, logger in loggers.items():
         component_name = name.split(".")[-1]
         file_handler = logging.FileHandler(
-            f"{logs_dir}/{component_name}_{datetime.now().strftime('%Y%m%d')}.log"
+            f"{logs_dir}/{component_name}_{datetime.now().strftime('%Y%m%d')}.log",
+            encoding="utf-8",
         )
         file_handler.setFormatter(
             logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -68,7 +75,7 @@ DIFY_API_KEY = os.getenv("DIFY_API_KEY", "")
 DIFY_API_URL = os.getenv("DIFY_API_URL", "https://api.dify.ai")
 
 # Gemini Model Config
-DEFAULT_MODEL = "gemini-2.5-flash-preview-04-17"
+DEFAULT_MODEL = "gemini-3-flash-preview"
 MAX_TOKENS = 8000
 
 LOGGERS["dify.app"].info(
@@ -79,6 +86,7 @@ LOGGERS["dify.app"].info(
 WORKFLOW_TYPES = {
     "chatflow": {
         "name": "Chatflow",
+        "mode": "advanced-chat",
         "icon": "💬",
         "description": "Multi-turn conversational applications (chatbots, assistants)",
         "use_cases": [
@@ -90,6 +98,7 @@ WORKFLOW_TYPES = {
     },
     "workflow": {
         "name": "Workflow",
+        "mode": "workflow",
         "icon": "⚙️",
         "description": "Single-turn batch processing tasks (automation, data processing)",
         "use_cases": [
@@ -101,6 +110,7 @@ WORKFLOW_TYPES = {
     },
     "agent": {
         "name": "Agent",
+        "mode": "agent",
         "icon": "🤖",
         "description": "Autonomous reasoning with tool calling (research, complex tasks)",
         "use_cases": [
@@ -144,7 +154,7 @@ AVAILABLE_TOOLS = [
 
 # Model options for different use cases
 MODEL_OPTIONS = {
-    "Fast & Cost-Effective": "gemini-2.5-flash-preview-04-17",
-    "Balanced (Recommended)": "gemini-2.5-pro-preview-05-06",
-    "Maximum Quality": "gemini-2.5-pro-preview-05-06",
+    "Fast & Cost-Effective": "gemini-1.5-flash",
+    "Balanced (Recommended)": "gemini-3-flash-preview",
+    "Maximum Quality": "gemini-1.5-flash",
 }

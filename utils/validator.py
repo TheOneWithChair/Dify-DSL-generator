@@ -28,9 +28,10 @@ class DifyDSLValidator:
         "http-request",
         "template-transform",
         "variable-assigner",
+        "assigner",
     ]
 
-    VALID_WORKFLOW_MODES = ["chatflow", "workflow", "agent"]
+    VALID_WORKFLOW_MODES = ["chatflow", "workflow", "agent", "advanced-chat", "agent-chat"]
 
     @staticmethod
     def validate_dsl(dsl_yaml: str) -> Tuple[bool, List[str], Dict]:
@@ -127,7 +128,7 @@ class DifyDSLValidator:
         app = dsl["app"]
 
         if "mode" not in app:
-            errors.append("❌ Missing workflow mode (chatflow/workflow/agent)")
+            errors.append("❌ Missing workflow mode (chatflow/workflow/agent/advanced-chat)")
         elif app["mode"] not in DifyDSLValidator.VALID_WORKFLOW_MODES:
             errors.append(f"❌ Invalid mode '{app['mode']}'")
         else:
@@ -209,18 +210,18 @@ class DifyDSLValidator:
             errors.append("❌ Workflow missing 'start' node")
 
         if not stats["has_end"]:
-            if workflow_type == "chatflow":
+            if workflow_type in ["chatflow", "advanced-chat"]:
                 errors.append("❌ Chatflow must end with 'answer' node")
             else:
                 errors.append("❌ Workflow must end with 'end' node")
 
-        if workflow_type == "chatflow":
+        if workflow_type in ["chatflow", "advanced-chat"]:
             if (
                 "answer" not in stats["node_types"]
                 and "end" in stats["node_types"]
             ):
                 errors.append("⚠ Chatflow should end with 'answer' not 'end'")
-        elif workflow_type in ["workflow", "agent"]:
+        elif workflow_type in ["workflow", "agent", "agent-chat"]:
             if (
                 "end" not in stats["node_types"]
                 and "answer" in stats["node_types"]

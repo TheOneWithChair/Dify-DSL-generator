@@ -6,3 +6,212 @@
 2026-05-05 19:14:53,263 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
 2026-05-05 19:14:53,272 - dify.app - INFO - Testing Gemini connection
 2026-05-05 19:14:53,274 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:00:35,895 - root - INFO - Logging system initialized
+2026-05-05 22:00:35,896 - dify.app - INFO - Using Gemini API with default model: gemini-2.5-flash-preview-04-17
+2026-05-05 22:00:36,912 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:05:11,132 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:05:11,161 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:05:11,162 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:05:11,164 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:05:11,737 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:05:11,738 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:12:24,850 - root - INFO - Logging system initialized
+2026-05-05 22:12:24,851 - dify.app - INFO - Using Gemini API with default model: gemini-2.5-flash-preview-04-17
+2026-05-05 22:12:25,710 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:12:28,041 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:12:28,048 - dify.app - INFO - Testing Gemini connection
+2026-05-05 22:12:28,050 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:12:28,051 - dify.generator - INFO - ✅ Gemini initialized: gemini-2.5-flash-preview-04-17
+2026-05-05 22:12:30,920 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:12:30,947 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:12:30,947 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:12:30,950 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:12:30,951 - dify.generator - INFO - ✅ Gemini initialized: gemini-2.5-flash-preview-04-17
+2026-05-05 22:12:31,246 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-2.5-flash-preview-04-17 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:12:31,247 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:13:46,230 - root - INFO - Logging system initialized
+2026-05-05 22:13:46,231 - dify.app - INFO - Using Gemini API with default model: gemini-2.5-flash-preview-04-17
+2026-05-05 22:13:47,140 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:14:02,593 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:14:02,597 - dify.app - INFO - Testing Gemini connection
+2026-05-05 22:14:02,600 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:14:02,600 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:14:06,958 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:14:06,984 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:14:06,985 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:14:06,987 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:14:06,988 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:14:07,279 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:14:07,281 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:15:40,951 - root - INFO - Logging system initialized
+2026-05-05 22:15:40,952 - dify.app - INFO - Using Gemini API with default model: gemini-1.5-flash
+2026-05-05 22:15:41,809 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:15:44,044 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:15:44,050 - dify.app - INFO - Testing Gemini connection
+2026-05-05 22:15:44,052 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:15:44,053 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:15:48,711 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:15:48,739 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:15:48,740 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:15:48,742 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:15:48,742 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:15:49,008 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:15:49,009 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:16:02,947 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:16:02,953 - dify.app - INFO - Testing Gemini connection
+2026-05-05 22:16:02,955 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:02,956 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:04,922 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:16:04,941 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:16:04,942 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:16:04,944 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:04,945 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:05,164 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:16:05,165 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:16:12,113 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:16:50,158 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:16:50,187 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:16:50,188 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:16:50,191 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:50,192 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:50,408 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:16:50,409 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:16:56,101 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:18:06,909 - root - INFO - Logging system initialized
+2026-05-05 22:18:06,910 - dify.app - INFO - Using Gemini API with default model: gemini-1.5-flash
+2026-05-05 22:18:07,786 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:18:43,027 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:18:43,049 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:18:43,051 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:18:43,052 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:18:43,054 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash
+2026-05-05 22:18:43,345 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:18:43,346 - dify.app - ERROR - DSL generation failed
+2026-05-05 22:27:50,743 - root - INFO - Logging system initialized
+2026-05-05 22:27:50,743 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 22:27:51,770 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:28:57,122 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:28:57,150 - dify.app - INFO - Starting DSL generation - Type: workflow, complexity: simple
+2026-05-05 22:28:57,151 - dify.app - INFO - User request: Travel Request Assistant Process travel requests by extracting trip details, validating required inf...
+2026-05-05 22:28:57,153 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:28:57,154 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:29:32,746 - dify.app - INFO - DSL generation successful
+2026-05-05 22:29:32,748 - dify.app - INFO - DSL added to history. Total history items: 1
+2026-05-05 22:29:32,753 - dify.app - INFO - Auto-validating generated DSL
+2026-05-05 22:29:32,753 - dify.validator - INFO - Starting DSL validation
+2026-05-05 22:29:32,793 - dify.validator - INFO - DSL validation completed. Valid: True, Critical errors: 0, Warnings: 0
+2026-05-05 22:29:32,794 - dify.validator - INFO - Statistics: 4 nodes, 3 edges, Type: workflow
+2026-05-05 22:29:32,796 - dify.app - INFO - Auto-validation successful. 4 nodes, 3 edges
+2026-05-05 22:29:32,825 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 22:29:32,864 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 13
+2026-05-05 22:29:36,814 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:29:36,868 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 22:29:36,906 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 13
+2026-05-05 22:51:12,512 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:51:12,556 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 22:51:12,598 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 13
+2026-05-05 22:51:17,014 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:51:20,336 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:53:44,421 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:53:44,444 - dify.app - INFO - Starting DSL generation - Type: chatflow, complexity: simple
+2026-05-05 22:53:44,446 - dify.app - INFO - User request: Create a simple multi-turn chatbot using Dify Chatflow that takes user queries, understands intent, ...
+2026-05-05 22:53:44,449 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:44,454 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:53:52,158 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:53:52,163 - dify.app - INFO - Testing Gemini connection
+2026-05-05 22:53:52,166 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:52,167 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:53:55,657 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:53:55,682 - dify.app - INFO - Starting DSL generation - Type: chatflow, complexity: simple
+2026-05-05 22:53:55,684 - dify.app - INFO - User request: Create a simple multi-turn chatbot using Dify Chatflow that takes user queries, understands intent, ...
+2026-05-05 22:53:55,684 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:55,687 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:54:18,024 - dify.app - INFO - DSL generation successful
+2026-05-05 22:54:18,027 - dify.app - INFO - DSL added to history. Total history items: 1
+2026-05-05 22:54:18,031 - dify.app - INFO - Auto-validating generated DSL
+2026-05-05 22:54:18,033 - dify.validator - INFO - Starting DSL validation
+2026-05-05 22:54:18,055 - dify.validator - INFO - DSL validation completed. Valid: True, Critical errors: 0, Warnings: 0
+2026-05-05 22:54:18,056 - dify.validator - INFO - Statistics: 3 nodes, 2 edges, Type: chatflow
+2026-05-05 22:54:18,058 - dify.app - INFO - Auto-validation successful. 3 nodes, 2 edges
+2026-05-05 22:54:18,086 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 22:54:18,114 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 8
+2026-05-05 22:54:20,715 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 22:54:20,771 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 22:54:20,794 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 8
+2026-05-05 23:36:24,557 - root - INFO - Logging system initialized
+2026-05-05 23:36:24,584 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 23:36:24,891 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:36:26,906 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:36:26,916 - dify.app - INFO - Testing Gemini connection
+2026-05-05 23:36:26,923 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:36:26,929 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:37:02,043 - root - INFO - Logging system initialized
+2026-05-05 23:37:02,044 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 23:37:03,010 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:37:05,943 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:37:05,949 - dify.app - INFO - Testing Gemini connection
+2026-05-05 23:37:05,951 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:37:05,953 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:38:12,901 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:38:12,920 - dify.app - INFO - Starting DSL generation - Type: chatflow, complexity: simple
+2026-05-05 23:38:12,921 - dify.app - INFO - User request: Create a customer support assistant that first greets the user and identifies if their issue is "Tec...
+2026-05-05 23:38:12,923 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:38:12,923 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:38:43,716 - dify.app - INFO - DSL generation successful
+2026-05-05 23:38:43,718 - dify.app - INFO - DSL added to history. Total history items: 1
+2026-05-05 23:38:43,723 - dify.app - INFO - Auto-validating generated DSL
+2026-05-05 23:38:43,725 - dify.validator - INFO - Starting DSL validation
+2026-05-05 23:38:43,799 - dify.validator - INFO - DSL validation completed. Valid: False, Critical errors: 1, Warnings: 0
+2026-05-05 23:38:43,801 - dify.validator - INFO - Statistics: 7 nodes, 8 edges, Type: None
+2026-05-05 23:38:43,803 - dify.app - WARNING - Auto-validation found issues. 1 critical errors
+2026-05-05 23:38:43,830 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:38:43,900 - dify.validator - INFO - Complexity analysis completed. Level: Moderate, Score: 25
+2026-05-05 23:42:00,374 - root - INFO - Logging system initialized
+2026-05-05 23:42:00,382 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 23:42:00,420 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:42:00,477 - dify.validator - INFO - Starting DSL validation
+2026-05-05 23:42:00,566 - dify.validator - INFO - DSL validation completed. Valid: True, Critical errors: 0, Warnings: 0
+2026-05-05 23:42:00,575 - dify.validator - INFO - Statistics: 7 nodes, 8 edges, Type: advanced-chat
+2026-05-05 23:42:00,594 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:42:00,668 - dify.validator - INFO - Complexity analysis completed. Level: Moderate, Score: 25
+2026-05-05 23:42:07,008 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:42:07,078 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:42:07,166 - dify.validator - INFO - Complexity analysis completed. Level: Moderate, Score: 25
+2026-05-05 23:54:07,092 - root - INFO - Logging system initialized
+2026-05-05 23:54:07,092 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 23:54:08,100 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:54:39,746 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:54:39,777 - dify.app - INFO - Starting DSL generation - Type: chatflow, complexity: simple
+2026-05-05 23:54:39,778 - dify.app - INFO - User request: Create a customer support assistant that first greets the user and identifies if their issue is "Tec...
+2026-05-05 23:54:39,780 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:54:39,781 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:55:26,216 - dify.app - INFO - DSL generation successful
+2026-05-05 23:55:26,217 - dify.app - INFO - DSL added to history. Total history items: 1
+2026-05-05 23:55:26,223 - dify.app - INFO - Auto-validating generated DSL
+2026-05-05 23:55:26,223 - dify.validator - INFO - Starting DSL validation
+2026-05-05 23:55:26,233 - dify.validator - INFO - DSL validation completed. Valid: False, Critical errors: 3, Warnings: 0
+2026-05-05 23:55:26,234 - dify.validator - INFO - Statistics: 1 nodes, 0 edges, Type: advanced-chat
+2026-05-05 23:55:26,236 - dify.app - WARNING - Auto-validation found issues. 3 critical errors
+2026-05-05 23:55:26,261 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:55:26,271 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 2
+2026-05-05 23:56:12,213 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:56:12,261 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:56:12,272 - dify.validator - INFO - Complexity analysis completed. Level: Simple, Score: 2
+2026-05-05 23:58:14,030 - root - INFO - Logging system initialized
+2026-05-05 23:58:14,032 - dify.app - INFO - Using Gemini API with default model: gemini-3-flash-preview
+2026-05-05 23:58:14,976 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:58:15,613 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:58:43,221 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 23:58:43,249 - dify.app - INFO - Starting DSL generation - Type: chatflow, complexity: simple
+2026-05-05 23:58:43,251 - dify.app - INFO - User request: Create a customer support assistant that first greets the user and identifies if their issue is "Tec...
+2026-05-05 23:58:43,253 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:58:43,255 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:59:25,939 - dify.app - INFO - DSL generation successful
+2026-05-05 23:59:25,942 - dify.app - INFO - DSL added to history. Total history items: 1
+2026-05-05 23:59:25,948 - dify.app - INFO - Auto-validating generated DSL
+2026-05-05 23:59:25,949 - dify.validator - INFO - Starting DSL validation
+2026-05-05 23:59:26,011 - dify.validator - INFO - DSL validation completed. Valid: False, Critical errors: 3, Warnings: 0
+2026-05-05 23:59:26,013 - dify.validator - INFO - Statistics: 6 nodes, 0 edges, Type: advanced-chat
+2026-05-05 23:59:26,015 - dify.app - WARNING - Auto-validation found issues. 3 critical errors
+2026-05-05 23:59:26,046 - dify.validator - INFO - Starting complexity analysis
+2026-05-05 23:59:26,103 - dify.validator - INFO - Complexity analysis completed. Level: Moderate, Score: 25

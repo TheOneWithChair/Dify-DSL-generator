@@ -1,1 +1,49 @@
 2026-05-05 19:14:53,274 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:05:11,164 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:05:11,737 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:12:28,050 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:12:28,051 - dify.generator - INFO - ✅ Gemini initialized: gemini-2.5-flash-preview-04-17
+2026-05-05 22:12:30,950 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:12:30,951 - dify.generator - INFO - ✅ Gemini initialized: gemini-2.5-flash-preview-04-17
+2026-05-05 22:12:31,246 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-2.5-flash-preview-04-17 is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:14:02,600 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:14:02,600 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:14:06,987 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:14:06,988 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:14:07,279 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:15:44,052 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:15:44,053 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:15:48,742 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:15:48,742 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:15:49,008 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:16:02,955 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:02,956 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:04,944 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:04,945 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:05,164 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:16:50,191 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:16:50,192 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash-latest
+2026-05-05 22:16:50,408 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:18:43,052 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:18:43,054 - dify.generator - INFO - ✅ Gemini initialized: gemini-1.5-flash
+2026-05-05 22:18:43,345 - dify.generator - ERROR - DSL generation failed: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-05-05 22:28:57,153 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:28:57,154 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:53:44,449 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:44,454 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:53:52,166 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:52,167 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 22:53:55,684 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 22:53:55,687 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:36:26,923 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:36:26,923 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:36:26,929 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:36:26,929 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:37:05,951 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:37:05,953 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:38:12,923 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:38:12,923 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:54:39,780 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:54:39,781 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview
+2026-05-05 23:58:43,253 - dify.generator - INFO - Initializing Gemini DSL Generator
+2026-05-05 23:58:43,255 - dify.generator - INFO - ✅ Gemini initialized: gemini-3-flash-preview

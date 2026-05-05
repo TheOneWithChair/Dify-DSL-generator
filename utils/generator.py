@@ -100,6 +100,84 @@ class DifyDSLGenerator:
         raw = self._call_llm(MASTER_SYSTEM_PROMPT, prompt)
         return _safe_json_loads(raw, "Intent extraction")
 
+    def _post_process_dsl(self, dsl: dict, workflow_type: str) -> dict:
+        """Ensure DSL structure matches working template perfectly."""
+        # 1. Fix mode
+        from app_config import WORKFLOW_TYPES
+        if workflow_type in WORKFLOW_TYPES:
+            dsl.setdefault("app", {})["mode"] = WORKFLOW_TYPES[workflow_type]["mode"]
+
+        # 2. Fix nodes
+        nodes = dsl.get("workflow", {}).get("graph", {}).get("nodes", [])
+        node_id_to_type = {}
+
+        for node in nodes:
+            # Ensure type: custom
+            node["type"] = "custom"
+            
+            # 2a. Heal node structure: Move UI fields out of data if AI nested them
+            data = node.setdefault("data", {})
+            if not isinstance(data, dict):
+                node["data"] = {}
+                data = node["data"]
+
+            # Move layout fields from data to top level
+            for field in ["width", "height", "selected", "sourcePosition", "targetPosition", "zIndex", "position", "positionAbsolute"]:
+                if field in data:
+                    val = data.pop(field)
+                    if val is not None:
+                        node[field] = val
+            
+            # 2b. NEVER allow null position
+            if node.get("position") is None:
+                node["position"] = {"x": 80, "y": 200}
+            if node.get("positionAbsolute") is None:
+                node["positionAbsolute"] = node["position"]
+
+            # Default dimensions if still missing
+            node.setdefault("width", 244)
+            node.setdefault("height", 90)
+            node.setdefault("selected", False)
+            node.setdefault("sourcePosition", "right")
+            node.setdefault("targetPosition", "left")
+            node.setdefault("zIndex", 0)
+
+            # Specific fixes for node types
+            node_type = data.get("type", "llm") # Default to llm if type missing
+            if node_type in ["variable-assigner", "variable-aggregator"]:
+                node_type = "assigner"
+            
+            data["type"] = node_type
+            data.setdefault("title", node_type.capitalize())
+            node_id_to_type[node["id"]] = node_type
+
+            # Specific fixes for if-else
+            if node_type == "if-else":
+                for case in data.get("cases", []):
+                    for cond in case.get("conditions", []):
+                        if cond.get("varType") == "boolean" and isinstance(
+                            cond.get("value"), bool
+                        ):
+                            cond["value"] = "true" if cond["value"] else "false"
+
+        # 3. Fix edges
+        edges = dsl.get("workflow", {}).get("graph", {}).get("edges", [])
+        for edge in edges:
+            edge["type"] = "custom"
+            edge.setdefault("zIndex", 0)
+            edge.setdefault("selected", False)
+            edge_data = edge.setdefault("data", {})
+            edge_data.setdefault("isInIteration", False)
+            edge_data.setdefault("isInLoop", False)
+            
+            # Ensure edge metadata matches our renamed node types
+            if "source" in edge:
+                edge_data["sourceType"] = node_id_to_type.get(edge["source"], edge_data.get("sourceType", "unknown"))
+            if "target" in edge:
+                edge_data["targetType"] = node_id_to_type.get(edge["target"], edge_data.get("targetType", "unknown"))
+
+        return dsl
+
     def generate_dsl(
         self,
         user_request: str,
@@ -155,8 +233,9 @@ Additional Instructions: {json.dumps(intent.get("additional_instructions", []), 
 - Use ONLY the node types defined above
 - Decide which nodes should exist and how they connect
 - If workflow_type == "workflow", use End node (NOT Answer)
-- If workflow_type == "chatflow", use Answer node (NOT End)
-- The variable aggregation node MUST use type: variable-assigner (NOT variable-aggregator)
+- If workflow_type == "chatflow", use Answer node (NOT End) and set mode: advanced-chat
+- The variable assignment/aggregation node MUST use type: assigner
+- Do NOT use 'variable-assigner' or 'variable-aggregator'
 - Do NOT invent new node types
 - Do NOT explain the DSL
 - Do NOT wrap output in markdown
@@ -178,13 +257,14 @@ LLM USER PROMPT TEMPLATE: {intent.get("llm_user_prompt_template", "")}
             # 4. Single AI call — full DSL
             raw_dsl = self._call_llm(final_system_prompt, user_message)
 
-            # 5. Validate YAML
+            # 5. Validate and Post-process YAML
             dsl = yaml.safe_load(raw_dsl)
             if not isinstance(dsl, dict):
                 raise ValueError("AI did not return valid DSL YAML")
 
+            dsl = self._post_process_dsl(dsl, workflow_type)
+            
             generation_time = round(time.time() - start_time, 2)
-            _normalize_if_else_conditions(dsl)
 
             return {
                 "success": True,
