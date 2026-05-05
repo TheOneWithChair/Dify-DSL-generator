@@ -1,0 +1,8 @@
+streamlit
+langchain-core
+pydantic
+pyyaml
+requests
+python-dotenv
+httpx
+google-generativeai

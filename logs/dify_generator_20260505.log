@@ -1,0 +1,8 @@
+2026-05-05 19:08:00,951 - root - INFO - Logging system initialized
+2026-05-05 19:08:00,951 - dify.app - INFO - Using Gemini API with default model: gemini-2.5-flash-preview-04-17
+2026-05-05 19:14:45,137 - root - INFO - Logging system initialized
+2026-05-05 19:14:45,139 - dify.app - INFO - Using Gemini API with default model: gemini-2.5-flash-preview-04-17
+2026-05-05 19:14:46,477 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 19:14:53,263 - dify.app - INFO - Starting Dify DSL Generator (Gemini)
+2026-05-05 19:14:53,272 - dify.app - INFO - Testing Gemini connection
+2026-05-05 19:14:53,274 - dify.generator - INFO - Initializing Gemini DSL Generator
