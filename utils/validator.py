@@ -29,6 +29,7 @@ class DifyDSLValidator:
         "template-transform",
         "variable-assigner",
         "assigner",
+        "variable-aggregator",
     ]
 
     VALID_WORKFLOW_MODES = ["chatflow", "workflow", "agent", "advanced-chat", "agent-chat"]

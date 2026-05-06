@@ -144,8 +144,10 @@ class DifyDSLGenerator:
 
             # Specific fixes for node types
             node_type = data.get("type", "llm") # Default to llm if type missing
-            if node_type in ["variable-assigner", "variable-aggregator"]:
+            if node_type == "variable-assigner":
                 node_type = "assigner"
+            elif node_type == "variable-aggregator":
+                node_type = "variable-aggregator"
             
             data["type"] = node_type
             data.setdefault("title", node_type.capitalize())
@@ -234,11 +236,12 @@ Additional Instructions: {json.dumps(intent.get("additional_instructions", []), 
 - Decide which nodes should exist and how they connect
 - If workflow_type == "workflow", use End node (NOT Answer)
 - If workflow_type == "chatflow", use Answer node (NOT End) and set mode: advanced-chat
-- The variable assignment/aggregation node MUST use type: assigner
-- Do NOT use 'variable-assigner' or 'variable-aggregator'
-- Do NOT invent new node types
-- Do NOT explain the DSL
-- Do NOT wrap output in markdown
+- Use 'variable-aggregator' ONLY for merging outputs from multiple parallel branches.
+- Use 'assigner' ONLY for writing a value into a Conversation or Environment variable.
+- If merging branches, use the 'variable-aggregator' structure (variables: [list of selectors]).
+- If setting a variable, use the 'assigner' structure (assigned_variable_selector, write_mode, input_variable_selector).
+- Do NOT use 'variable-assigner' (legacy).
+- Do NOT invent new node types.
 - Output MUST start with: version: '0.5.0'
 """
 
