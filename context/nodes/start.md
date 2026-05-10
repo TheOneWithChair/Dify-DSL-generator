@@ -75,16 +75,20 @@ Each entry in the `variables` array is an `InputVar`:
 | `isFileItem` | `boolean` | No | Internal flag for file-type variables. |
 | `getVarValueFromDependent` | `boolean` | No | Internal flag for dependent variable resolution. |
 
-**File upload fields** (merged from `UploadFileSetting`, applicable when type is `files` / `file` / `file-list`):
+**File upload fields** (merged from `UploadFileSetting`, applicable when type is `files` / `file` / `file-list`). 
+
+> [!IMPORTANT]
+> For the "Local upload" button to appear in the Start node form, you MUST include `allowed_file_types`, `allowed_file_extensions`, and `allowed_file_upload_methods` directly within the variable definition.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `allowed_file_upload_methods` | `TransferMethod[]` | No | How files can be provided (e.g., `"remote_url"`, `"local_file"`). |
-| `allowed_upload_methods` | `TransferMethod[]` | No | Alternative field name for allowed methods. |
-| `allowed_file_types` | `SupportUploadFileTypes[]` | No | File categories: `"image"`, `"document"`, `"audio"`, `"video"`, `"custom"`. |
-| `allowed_file_extensions` | `string[]` | No | Specific file extensions (e.g., `[".pdf", ".txt"]`). |
+| `allowed_file_upload_methods` | `TransferMethod[]` | Yes | How files can be provided (e.g., `["local_file"]`). |
+| `allowed_file_types` | `SupportUploadFileTypes[]` | Yes | File categories: `"image"`, `"document"`, `"audio"`, `"video"`, `"custom"`. |
+| `allowed_file_extensions` | `string[]` | Yes | Specific file extensions (e.g., `[".pdf", ".txt"]`). |
 | `max_length` | `number` | No | Maximum file size. |
 | `number_limits` | `number` | No | Maximum number of files. |
+| `is_array_file` | `boolean` | No | For `document-extractor`, set to `false` for single files. |
+
 
 ### InputVarType Enum
 

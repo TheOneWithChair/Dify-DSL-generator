@@ -22,18 +22,22 @@ from prompts.node_library import (
 logger = LOGGERS["dify.generator"]
 
 
-def _safe_json_loads(raw_text: str, context: str):
-    """Safely parse JSON (or YAML fallback) from LLM output."""
+def _strip_markdown_code_fences(raw_text: str) -> str:
+    """Strip markdown code fences (e.g. ```yaml ... ```) from text."""
     cleaned = raw_text.strip()
-
-    # Strip code fences
     if cleaned.startswith("```"):
         lines = cleaned.splitlines()
         if lines[0].startswith("```"):
             lines = lines[1:]
-        if lines[-1].strip() == "```":
+        if lines and lines[-1].strip() == "```":
             lines = lines[:-1]
         cleaned = "\n".join(lines).strip()
+    return cleaned
+
+
+def _safe_json_loads(raw_text: str, context: str):
+    """Safely parse JSON (or YAML fallback) from LLM output."""
+    cleaned = _strip_markdown_code_fences(raw_text)
 
     # Try JSON first
     try:
@@ -178,6 +182,56 @@ class DifyDSLGenerator:
             if "target" in edge:
                 edge_data["targetType"] = node_id_to_type.get(edge["target"], edge_data.get("targetType", "unknown"))
 
+        # 4. Fix file upload logic
+        dsl = self._fix_file_upload_logic(dsl, workflow_type)
+
+        return dsl
+
+    def _fix_file_upload_logic(self, dsl: dict, workflow_type: str) -> dict:
+        """
+        Ensure file variables in Start node have required settings.
+        Also handles the global features.file_upload.enabled flag.
+        """
+        nodes = dsl.get("workflow", {}).get("graph", {}).get("nodes", [])
+        start_node = next((n for n in nodes if n.get("data", {}).get("type") == "start"), None)
+        
+        has_file_var = False
+        file_var_is_list = False
+        if start_node:
+            variables = start_node.get("data", {}).get("variables", [])
+            for var in variables:
+                if var.get("type") in ["file", "file-list", "files"]:
+                    has_file_var = True
+                    # Normalize to 'file' if it's a single file, or if it's the legacy 'files'
+                    if var.get("number_limits") == 1 or var.get("type") == "files":
+                        var["type"] = "file"
+                    
+                    if var.get("type") == "file-list":
+                        file_var_is_list = True
+                    else:
+                        file_var_is_list = False
+                    # Ensure required fields for UI button
+                    var.setdefault("allowed_file_upload_methods", ["local_file"])
+                    var.setdefault("allowed_file_types", ["document"])
+                    var.setdefault("allowed_file_extensions", [])
+                    var.setdefault("number_limits", 1)
+                    var.setdefault("required", True)
+
+        # Fix document-extractor nodes
+        for node in nodes:
+            data = node.get("data", {})
+            if data.get("type") == "document-extractor":
+                data.setdefault("is_array_file", file_var_is_list)
+
+        # For Workflow mode, if we have per-variable upload, the global feature should be disabled
+        # as it's primarily for chat-based upload.
+        if workflow_type == "workflow":
+            features = dsl.get("workflow", {}).get("features", {})
+            if has_file_var:
+                if "file_upload" not in features:
+                    features["file_upload"] = {}
+                features["file_upload"]["enabled"] = False
+        
         return dsl
 
     def generate_dsl(
@@ -261,7 +315,8 @@ LLM USER PROMPT TEMPLATE: {intent.get("llm_user_prompt_template", "")}
             raw_dsl = self._call_llm(final_system_prompt, user_message)
 
             # 5. Validate and Post-process YAML
-            dsl = yaml.safe_load(raw_dsl)
+            cleaned_dsl = _strip_markdown_code_fences(raw_dsl)
+            dsl = yaml.safe_load(cleaned_dsl)
             if not isinstance(dsl, dict):
                 raise ValueError("AI did not return valid DSL YAML")
 
@@ -308,7 +363,8 @@ Output ONLY YAML.
 """
         try:
             raw = self._call_llm(MASTER_SYSTEM_PROMPT, refinement_prompt)
-            return {"success": True, "dsl": raw, "error": None}
+            cleaned = _strip_markdown_code_fences(raw)
+            return {"success": True, "dsl": cleaned, "error": None}
         except Exception as e:
             logger.error(f"Refinement failed: {str(e)}")
             return {"success": False, "dsl": None, "error": str(e)}
